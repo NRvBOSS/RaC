@@ -6,7 +6,7 @@
       }"
       :speed="600"
       :parallax="true"
-      :pagination="false"
+      :pagination="true"
       :navigation="true"
       :modules="modules"
       class="w-full h-screen"
@@ -22,7 +22,7 @@
   
         <!-- Text Content -->
         <div
-          class="relative text-center max-w-2xl text-2xl md:text-3xl font-bold drop-shadow-lg"
+          class="relative text-center max-w-2xl text-2xl md:text-3xl font-bold drop-shadow-lg pt-20"
           data-swiper-parallax="-200"
         >
           {{ slide.text }}
