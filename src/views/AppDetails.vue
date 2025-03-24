@@ -1,8 +1,8 @@
 <!-- Details page of the cars -->
 <template>
-    <!-- <AppHeader /> -->
+    <AppHeader />
     <CarDetail />
-    <!-- <AppFooter /> -->
+    <AppFooter />
 </template>
 
 <script setup>

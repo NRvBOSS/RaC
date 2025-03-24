@@ -14,11 +14,11 @@
     ></textarea>
 
     <!-- Sign In Button -->
-    <a
+    <router-link to=""
       class="mr-8 rounded-2xl border-2 bg-white hover:bg-black hover:text-white transition-colors duration-300 px-4 py-2"
       href="#"
     >
       Sign In
-    </a>
+    </router-link>
   </header>
 </template>
