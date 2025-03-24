@@ -1,12 +1,18 @@
 import { createRouter, createWebHistory } from 'vue-router'
+import AppCars from '../views/AppCars.vue'
+import AppLandingPage from '@/views/AppLandingPage.vue'
 
 const router = createRouter({
-  history: createWebHistory(import.meta.env.BASE_URL),
+  history: createWebHistory(),
   routes: [
     {
       path: '/',
-      name: 'home',
+      component: AppLandingPage, 
     },
+    {
+      path: '/cars',
+      component: AppCars,
+    }
   ],
 })
 

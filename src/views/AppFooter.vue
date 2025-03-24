@@ -70,7 +70,7 @@
     <div class="border-t border-gray-700 my-4"></div>
     <p class="text-center text-sm">
       Copyright &copy; {{ currentYear }} | Powered by
-      <a href="" class="text-blue-400">Nirvana Tech</a>
+      <a href="https://nirvanatech.vercel.app/" class="text-blue-400">Nirvana Tech</a>
     </p>
   </footer>
 </template>
