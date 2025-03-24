@@ -1,14 +1,12 @@
+<!-- Details page of the cars -->
 <template>
-    <AppHeader />
-    <div>
-        
-    </div>
-    <AppFooter />
+    <!-- <AppHeader /> -->
+    <CarDetail />
+    <!-- <AppFooter /> -->
 </template>
 
 <script setup>
-import { ref } from "vue";
-import carDetails from "./AppCars.vue";
 import AppHeader from "./AppHeader.vue";
 import AppFooter from "./AppFooter.vue";
+import CarDetail from "../components/CarDetail.vue";
 </script>

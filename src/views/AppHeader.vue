@@ -3,9 +3,9 @@
     class="flex fixed justify-between items-center top-0 left-0 w-full p-4 flex-wrap bg-black/30 backdrop-blur-sm z-50"
   >
     <!-- Logo -->
-    <a class="ml-10 text-3xl text-white font-bold" href="#">
+    <router-link class="ml-10 text-3xl text-white font-bold" to="/">
       <p class="text-white">RaC</p>
-    </a>
+    </router-link>
 
     <!-- Search Input -->
     <textarea
