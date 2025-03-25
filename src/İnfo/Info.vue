@@ -53,5 +53,19 @@ const cars = ref([
     image:
       "https://turbo.azstatic.com/uploads/f460x343/2025%2F02%2F19%2F11%2F51%2F10%2F6d767674-44ab-487e-b5e9-ccf6d79940e5%2F710_n_84bQNwZvpGSEPPCvJ-ng.jpg",
   },
+  {
+    id: 4,
+    name: "Chevrolet Equinox",
+    year: 2018,
+    sale: false,
+    rent: true,
+    people: 4,
+    engine: "1.5L 4-cylinder",
+    gearbox: "Automatic",
+    gear: "Oil",
+    price: 24600,
+    image:
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Chevrolet_Equinox_LT_%28III%2C_Facelift%29_%E2%80%93_f_05102022.jpg/800px-Chevrolet_Equinox_LT_%28III%2C_Facelift%29_%E2%80%93_f_05102022.jpg",
+  }
 ]);
 </script>

@@ -14,11 +14,16 @@
     ></textarea>
 
     <!-- Sign In Button -->
-    <router-link to=""
-      class="mr-8 rounded-2xl border-2 bg-white hover:bg-black hover:text-white transition-colors duration-300 px-4 py-2"
+    <router-link
+      to=""
+      class="duration-300 mr-8 hover:bg-white rounded-full"
       href="#"
     >
-      Sign In
+      <img
+        class="w-12 h-12"
+        src="https://cdn-icons-png.flaticon.com/512/3276/3276535.png"
+        alt=""
+      />
     </router-link>
   </header>
 </template>

@@ -29,9 +29,8 @@
 
 <script setup>
 import { ref } from "vue";
-// import CarCard from "../components/CarCard.vue";
+import CarCard from "../components/CarCard.vue";
 import AppHeader from "./AppHeader.vue";
 import AppFooter from "./AppFooter.vue";
-// import cars from "../components/Info.vue";
 import Info from "../İnfo/Info.vue";
 </script>

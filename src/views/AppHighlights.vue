@@ -64,7 +64,7 @@
         <div class="flex justify-between items-center p-4">
           <p class="font-bold text-black">Price: {{ item.price }}</p>
           <button
-            class="bg-black text-white hover:bg-white hover:text-black duration-300 p-2 rounded-lg"
+            class="bg-black text-white cursor-pointer hover:bg-white hover:text-black duration-300 p-2 rounded-lg"
           >
             View Details
           </button>

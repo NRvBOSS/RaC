@@ -1,7 +1,7 @@
 <!-- Details page of the cars -->
 <template>
     <AppHeader />
-    <CarDetail />
+    <!-- <CarDetail /> -->
     <AppFooter />
 </template>
 
