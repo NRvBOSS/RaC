@@ -66,6 +66,19 @@ const cars = ref([
     price: 24600,
     image:
       "https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Chevrolet_Equinox_LT_%28III%2C_Facelift%29_%E2%80%93_f_05102022.jpg/800px-Chevrolet_Equinox_LT_%28III%2C_Facelift%29_%E2%80%93_f_05102022.jpg",
+  },
+  {
+    id: 5,
+    name: "Ford Raptor",
+    year: 2022,
+    sale: false,
+    rent: true,
+    people: 4,
+    engine: "3.5L V6",
+    gearbox: "Automatic",
+    gear: "Diesel",
+    price: 80000,
+    image: "https://vigoasia.com/assets/product_photos/2878/64e5c6d03db7a.jpg"
   }
 ]);
 </script>

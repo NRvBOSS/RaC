@@ -1,4 +1,4 @@
-<template>
+<!-- <template>
   <div class="text-xl font-mono">
     <span>{{ displayedText }}</span
     ><span class="animate-blink">|</span>
@@ -33,4 +33,14 @@ onMounted(() => {
 .animate-blink {
   animation: blink 0.7s infinite;
 }
-</style>
+</style> -->
+
+<template>
+  <AppHeader />
+
+</template>
+
+<script setup>
+import AppHeader from "./AppHeader.vue";
+
+</script>
