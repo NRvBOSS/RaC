@@ -78,7 +78,7 @@ const cars = ref([
     gearbox: "Automatic",
     gear: "Diesel",
     price: 80000,
-    image: "https://vigoasia.com/assets/product_photos/2878/64e5c6d03db7a.jpg"
+    image: "https://vigoasia.com/assets/product_photos/2878/64e5c6d03db7a.jpg",
   },
   {
     id: 6,
@@ -91,7 +91,8 @@ const cars = ref([
     gearbox: "Automatic",
     gear: "Plug-in Hybrid",
     price: 120000,
-    image: "https://turbo.azstatic.com/uploads/f660x496/2025%2F03%2F30%2F19%2F18%2F27%2Fa215ae41-a62d-4d93-89af-3d5f12e7ad19%2F70473_QrTN9IRaiEdJVbJnUL_W4A.jpg"
-  }
+    image:
+      "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/177511/maybach-gls-exterior-right-front-three-quarter-4.jpeg?isig=0&q=80&q=80",
+  },
 ]);
 </script>
