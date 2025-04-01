@@ -79,6 +79,19 @@ const cars = ref([
     gear: "Diesel",
     price: 80000,
     image: "https://vigoasia.com/assets/product_photos/2878/64e5c6d03db7a.jpg"
+  },
+  {
+    id: 6,
+    name: "Mercedes GLS 450",
+    year: 2019,
+    sale: true,
+    rent: false,
+    people: 7,
+    engine: "3.0L V6",
+    gearbox: "Automatic",
+    gear: "Plug-in Hybrid",
+    price: 120000,
+    image: "https://turbo.azstatic.com/uploads/f660x496/2025%2F03%2F30%2F19%2F18%2F27%2Fa215ae41-a62d-4d93-89af-3d5f12e7ad19%2F70473_QrTN9IRaiEdJVbJnUL_W4A.jpg"
   }
 ]);
 </script>
