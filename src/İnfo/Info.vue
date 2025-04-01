@@ -1,10 +1,12 @@
 <template>
   <CarCard :cars="cars" />
+  <CarDetail :cars="cars" />
 </template>
 
 <script setup>
 import { ref } from "vue";
 import CarCard from "../components/CarCard.vue";
+import CarDetail from "../components/CarDetail.vue"
 
 const cars = ref([
   {

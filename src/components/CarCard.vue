@@ -42,7 +42,7 @@
         <div class="flex justify-between items-center p-4">
           <p class="font-bold text-black">Price: ${{ car.price }}</p>
           <router-link
-            to="/carsDetails/{{ car.id }}"
+            :to="`/cars/${car.id}`"
             class="bg-black text-white hover:bg-white hover:text-black duration-300 p-2 rounded-lg"
           >
             View Details
