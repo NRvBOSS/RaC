@@ -24,8 +24,7 @@
               :href="image.href"
               class="w-8 h-8 my-4 m-4 transition duration-300 ease-in-out hover:scale-110 cursor-pointer"
             >
-            <img
-            :src="image.src"
+              <img :src="image.src"
             </a>
           </div>
         </div>
@@ -70,7 +69,12 @@
     <div class="border-t border-gray-700 my-4"></div>
     <p class="text-center text-sm">
       Copyright &copy; {{ currentYear }} | Powered by
-      <a href="https://nirvanatech.vercel.app/" class="text-blue-400" target="_blank">Nirvana Tech</a>
+      <a
+        href="https://nirvanatech.vercel.app/"
+        class="text-blue-400"
+        target="_blank"
+        >Nirvana Tech</a
+      >
     </p>
   </footer>
 </template>
@@ -87,7 +91,7 @@ const images = ref([
   {
     id: 2,
     src: "https://static-00.iconduck.com/assets.00/github-icon-2048x2048-iw6ut8fe.png",
-    href: "https://github.com/NRvBOSS"
+    href: "https://github.com/NRvBOSS",
   },
 ]);
 

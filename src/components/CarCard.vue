@@ -44,6 +44,7 @@
           <router-link
             :to="`/cars/${car.id}`"
             @click="console.log('Navigating to ID:', car.id)"
+            target="_blank"
             class="bg-black text-white hover:bg-white hover:text-black duration-300 p-2 rounded-lg"
           >
             View Details

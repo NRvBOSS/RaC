@@ -1,3 +1,4 @@
+import AppFooter from "@/views/AppFooter.vue";
 import { defineStore } from "pinia";
 
 export const useInfoStore = defineStore("infoStore", {
@@ -16,10 +17,8 @@ export const useInfoStore = defineStore("infoStore", {
                 price: 15000,
                 image:
                   "https://images.dealersync.com/2520/Photos/866026/20220812014223734_IMG_1287.jpg?_=78461920c722199df18633aa6f969fbbacd7c37d",
-                images: [
-                  "https://res.cloudinary.com/unix-center/image/upload/c_limit,dpr_3.0,f_auto,fl_progressive,g_center,h_240,q_auto:good,w_385/ctjvjtjfxqavguj60uss.jpg",
-                  "https://res.cloudinary.com/unix-center/image/upload/c_limit,dpr_3.0,f_auto,fl_progressive,g_center,h_240,q_auto:good,w_385/raqc0fhylroix2detzyb.jpg",
-                ],
+                owner: "Orxan",
+                city: "Baku"
               },
               {
                 id: 2,
@@ -33,8 +32,9 @@ export const useInfoStore = defineStore("infoStore", {
                 gear: "Oil",
                 price: 20000,
                 image: "https://bumer.az/oc-content/uploads/23/11573.jpg",
-                images: [],
-              },
+                owner: "John",
+                city: "London"
+                            },
               {
                 id: 3,
                 name: "Hyundai Santa Fe",
@@ -48,6 +48,8 @@ export const useInfoStore = defineStore("infoStore", {
                 price: 75000,
                 image:
                   "https://turbo.azstatic.com/uploads/f460x343/2025%2F02%2F19%2F11%2F51%2F10%2F6d767674-44ab-487e-b5e9-ccf6d79940e5%2F710_n_84bQNwZvpGSEPPCvJ-ng.jpg",
+                  owner: "Asya",
+                city: "Istanbul"
               },
               {
                 id: 4,
@@ -62,6 +64,8 @@ export const useInfoStore = defineStore("infoStore", {
                 price: 24600,
                 image:
                   "https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Chevrolet_Equinox_LT_%28III%2C_Facelift%29_%E2%80%93_f_05102022.jpg/800px-Chevrolet_Equinox_LT_%28III%2C_Facelift%29_%E2%80%93_f_05102022.jpg",
+                  owner: "Clark Kent",
+                city: "New-York"
               },
               {
                 id: 5,
@@ -89,6 +93,8 @@ export const useInfoStore = defineStore("infoStore", {
                 price: 120000,
                 image:
                   "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/177511/maybach-gls-exterior-right-front-three-quarter-4.jpeg?isig=0&q=80&q=80",
+                  owner: "Nick Woltemade",
+                city: "Stuttgart"
               },
               {
                 id: 7,
@@ -98,13 +104,30 @@ export const useInfoStore = defineStore("infoStore", {
                 rent: true,
                 people: 2,
                 engine: "	4.0L H6",
-                gearbox: "	8 Speed Dual Clutch Trans",
+                gearbox: "	8 Speed Dual Clutch",
                 gear: "Gasoline",
                 price: 500000,
-                image: "https://www.mclarencf.com/imagetag/334/4/l/Used-2022-Porsche-911-GT3-GT3.jpg"
+                image: "https://www.mclarencf.com/imagetag/334/4/l/Used-2022-Porsche-911-GT3-GT3.jpg",
+                owner: "Alihüseyn",
+                city: "Edinburgh"
+              },
+              {
+                id: 8,
+                name: "Range Rover Evoque",
+                year: 2020,
+                sale: true,
+                rent: false,
+                people: 4,
+                engine: "	2.0L",
+                gearbox: "Automatic",
+                gear: "Diesel",
+                price: 35000,
+                image: "https://4x4vehiclehire.co.uk/wp-content/uploads/2014/09/rr_evq_12my_media_drive_280711_13_LowRes.jpg",
+                owner: "Nuray",
+                city: "Tokyo"
               }
-
-        ]
+      ]
+        
     })
 })
 

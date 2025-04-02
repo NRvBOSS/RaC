@@ -22,13 +22,9 @@
     <div class="border mx-10 my-4"></div>
     <CarCard />
   </div>
-
-  <AppFooter />
 </template>
 
 <script setup>
-import { ref } from "vue";
 import CarCard from "../components/CarCard.vue";
 import AppHeader from "./AppHeader.vue";
-import AppFooter from "./AppFooter.vue";
 </script>
