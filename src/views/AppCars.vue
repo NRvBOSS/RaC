@@ -20,6 +20,7 @@
     </div>
     <h1 class="text-2xl font-bold mx-10 mt-10">Our Cars</h1>
     <div class="border mx-10 my-4"></div>
+    <CarCard />
   </div>
 
   <AppFooter />

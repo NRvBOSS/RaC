@@ -2,7 +2,7 @@
   <div class="py-10 px-10">
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
       <div
-        v-for="car in useInfoStore"
+        v-for="car in carsStore.cars"
         :key="car.id"
         class="bg-gray-100 rounded-2xl overflow-hidden shadow-lg flex-1 min-w-[300px]"
       >
@@ -55,5 +55,13 @@
 </template>
 
 <script>
-import useInfoStore from "../stores/InfoStore"
+import { useInfoStore } from "../stores/InfoStore";
+
+export default {
+  setup() {
+    const carsStore = useInfoStore();
+    console.log("Cars data:", carsStore.cars);
+    return { carsStore };
+  },
+};
 </script>

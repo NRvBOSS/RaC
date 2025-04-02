@@ -1,6 +1,6 @@
 import { defineStore } from "pinia";
 
-const useInfoStore = defineStore("infoStore", {
+export const useInfoStore = defineStore("infoStore", {
     state: () => ({
         cars:[
             {
@@ -90,7 +90,22 @@ const useInfoStore = defineStore("infoStore", {
                 image:
                   "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/177511/maybach-gls-exterior-right-front-three-quarter-4.jpeg?isig=0&q=80&q=80",
               },
+              {
+                id: 7,
+                name: "Porsche 911 GT3",
+                year: 2022,
+                sale: false,
+                rent: true,
+                people: 2,
+                engine: "	4.0L H6",
+                gearbox: "	8 Speed Dual Clutch Trans",
+                gear: "Gasoline",
+                price: 500000,
+                image: "https://www.mclarencf.com/imagetag/334/4/l/Used-2022-Porsche-911-GT3-GT3.jpg"
+              }
 
         ]
     })
 })
+
+export default useInfoStore;
