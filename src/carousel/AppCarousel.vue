@@ -74,7 +74,7 @@ export default {
         } else {
           clearInterval(interval);
         }
-      }, 30); // Hər hərf 50ms-dən bir çıxır
+      }, 23); // Hər hərf 23ms-dən bir çıxır
     };
 
     const handleSlideChange = (swiper) => {
