@@ -1,7 +1,3 @@
-<template>
-  <AppHeader />
-</template>
+<template></template>
 
-<script setup>
-import AppHeader from "./AppHeader.vue";
-</script>
+<script></script>

@@ -18,10 +18,8 @@
         </div>
       </div>
     </div>
-
     <h1 class="text-2xl font-bold mx-10 mt-10">Our Cars</h1>
     <div class="border mx-10 my-4"></div>
-    <Info />
   </div>
 
   <AppFooter />
@@ -32,5 +30,4 @@ import { ref } from "vue";
 import CarCard from "../components/CarCard.vue";
 import AppHeader from "./AppHeader.vue";
 import AppFooter from "./AppFooter.vue";
-import Info from "../İnfo/Info.vue";
 </script>
