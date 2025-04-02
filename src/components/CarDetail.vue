@@ -1,6 +1,8 @@
-<template>
+<template></template>
 
-</template>
+<script setup>
+// import { useRoute } from "vue-router";
 
-<script>
+// const route = useRoute();
+// console.log("Current Car ID:", route.params.id);
 </script>
