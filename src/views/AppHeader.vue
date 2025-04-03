@@ -8,10 +8,10 @@
     </router-link>
 
     <!-- Search Input -->
-    <textarea
-      class="border-2 border-white focus:outline-none w-[35rem] max-w-full rounded-2xl content-around px-4 resize-none bg-white transition-colors duration-300 focus:border-black"
+    <input
+      class="border-2 border-white focus:outline-none h-[3rem] max-h-full w-[35rem] max-w-full rounded-2xl content-around px-4 resize-none bg-white transition-colors duration-300 focus:border-black"
       placeholder="Search 🔍"
-    ></textarea>
+    ></input>
 
     <!-- Sign In Button -->
     <router-link
