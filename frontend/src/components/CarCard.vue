@@ -2,7 +2,7 @@
   <div class="py-10 px-10">
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
       <div
-        v-for="car in carsStore.cars"
+        v-for="car in cars"
         :key="car.id"
         class="bg-gray-100 rounded-2xl overflow-hidden shadow-lg flex-1 min-w-[300px]"
       >
@@ -42,8 +42,8 @@
         <div class="flex justify-between items-center p-4">
           <p class="font-bold text-black">Price: ${{ car.price }}</p>
           <router-link
-            :to="`/cars/${car.id}`"
-            @click="console.log('Navigating to ID:', car.id)"
+            :to="`/cars/${car._id}`"
+            @click="console.log('Navigating to ID:', car._id)"
             target="_blank"
             class="bg-black text-white hover:bg-white hover:text-black duration-300 p-2 rounded-lg"
           >
@@ -55,14 +55,18 @@
   </div>
 </template>
 
-<script>
-import { useInfoStore } from "../stores/InfoStore";
+<script setup>
+import axios from "axios";
+import { ref, onMounted } from "vue";
 
-export default {
-  setup() {
-    const carsStore = useInfoStore();
-    console.log("Cars data:", carsStore.cars);
-    return { carsStore };
-  },
-};
+const cars = ref([]);
+
+onMounted(async () => {
+  try {
+    const response = await axios.get("http://localhost:4000/api/cars");
+    cars.value = response.data;
+  } catch (error) {
+    console.error("Error fetching cars:", error);
+  }
+});
 </script>

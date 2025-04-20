@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import AppCars from '../views/AppCars.vue'
 import AppLandingPage from '@/views/AppLandingPage.vue'
-import cars from '../components/CarDetail.vue'
+import carDetails from '../components/CarDetail.vue'
 
 const router = createRouter({
   history: createWebHistory(),
@@ -16,7 +16,7 @@ const router = createRouter({
     },
     {
       path: "/cars/:id",
-      component: cars,
+      component: carDetails,
     }
 
   ],
