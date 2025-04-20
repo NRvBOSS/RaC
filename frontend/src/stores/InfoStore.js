@@ -79,6 +79,8 @@ export const useInfoStore = defineStore("infoStore", {
                 gear: "Diesel",
                 price: 80000,
                 image: "https://vigoasia.com/assets/product_photos/2878/64e5c6d03db7a.jpg",
+                owner: "Bruce Wayne",
+                city: "Gotham"
               },
               {
                 id: 6,
@@ -104,7 +106,7 @@ export const useInfoStore = defineStore("infoStore", {
                 rent: true,
                 people: 2,
                 engine: "	4.0L H6",
-                gearbox: "	8 Speed Dual Clutch",
+                gearbox: "8 Speed Dual Clutch",
                 gear: "Gasoline",
                 price: 500000,
                 image: "https://www.mclarencf.com/imagetag/334/4/l/Used-2022-Porsche-911-GT3-GT3.jpg",
