@@ -15,7 +15,7 @@
 
     <!-- Sign In Button -->
     <router-link
-      to=""
+      to="/cars/account"
       class="duration-300 mr-8 hover:bg-white rounded-full"
       href="#"
     >

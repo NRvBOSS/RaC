@@ -10,7 +10,7 @@ const carsSchema = new Schema({
         type: Number,
         required:true
     },
-    roof:{
+    ban:{
         type: String,
         required: true
     },

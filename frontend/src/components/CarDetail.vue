@@ -51,7 +51,7 @@
         <p v-if="car.city">City: {{ car.city }}</p>
         <p v-if="car.name">Model: {{ car.name }}</p>
         <p v-if="car.year">Release year: {{ car.year }}</p>
-        <p v-if="car.roof">Roof: {{ car.roof }}</p>
+        <p v-if="car.ban">Ban: {{ car.ban }}</p>
         <p v-if="car.mileage">Mileage: {{ car.mileage }} km</p>
         <p v-if="car.color">Color: {{ car.color }}</p>
         <p v-if="car.engine">Engine: {{ car.engine }}</p>
