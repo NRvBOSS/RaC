@@ -1,0 +1,168 @@
+[{
+  "_id": {
+    "$oid": "68053ecf4e066c645410d6b3"
+  },
+  "name": "Hyundai Elantra",
+  "year": 2009,
+  "sale": true,
+  "rent": false,
+  "people": 4,
+  "engine": "1.6L 4-cylinder",
+  "gearbox": "Automatic",
+  "gear": "Oil",
+  "price": 15000,
+  "image": "https://images.dealersync.com/2520/Photos/866026/20220812014223734_IMG_1287.jpg?_=78461920c722199df18633aa6f969fbbacd7c37d",
+  "owner": "Orxan",
+  "city": "Gəncə",
+  "createdAt": {
+    "$date": "2025-04-20T18:37:03.965Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-20T18:37:03.965Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "680540c74e066c645410d6b5"
+  },
+  "name": "Hyundai Sonata",
+  "year": 2009,
+  "sale": true,
+  "rent": false,
+  "people": 4,
+  "engine": "2.4L 4-cylinder",
+  "gearbox": "Automatic",
+  "gear": "Oil",
+  "price": 20000,
+  "image": "https://bumer.az/oc-content/uploads/23/11573.jpg",
+  "owner": "John",
+  "city": "London",
+  "createdAt": {
+    "$date": "2025-04-20T18:45:27.565Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-20T18:45:27.565Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6805414e4e066c645410d6b7"
+  },
+  "name": "Chevrolet Equinox",
+  "year": 2018,
+  "sale": false,
+  "rent": true,
+  "people": 4,
+  "engine": "1.5L 4-cylinder",
+  "gearbox": "Automatic",
+  "gear": "Oil",
+  "price": 24600,
+  "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Chevrolet_Equinox_LT_%28III%2C_Facelift%29_%E2%80%93_f_05102022.jpg/800px-Chevrolet_Equinox_LT_%28III%2C_Facelift%29_%E2%80%93_f_05102022.jpg",
+  "owner": "Clark Kent",
+  "city": "New-York",
+  "createdAt": {
+    "$date": "2025-04-20T18:47:42.631Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-20T18:47:42.631Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "680541af4e066c645410d6b9"
+  },
+  "name": "Ford Raptor",
+  "year": 2022,
+  "sale": false,
+  "rent": true,
+  "people": 4,
+  "engine": "3.5L V6",
+  "gearbox": "Automatic",
+  "gear": "Diesel",
+  "price": 80000,
+  "image": "https://vigoasia.com/assets/product_photos/2878/64e5c6d03db7a.jpg",
+  "owner": "bruce Wayne",
+  "city": "Gotham",
+  "createdAt": {
+    "$date": "2025-04-20T18:49:19.811Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-20T18:49:19.811Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "680542034e066c645410d6bb"
+  },
+  "name": "Mercedes GLS 450",
+  "year": 2019,
+  "sale": true,
+  "rent": false,
+  "people": 7,
+  "engine": "3.0L V6",
+  "gearbox": "Automatic",
+  "gear": "Hybrid",
+  "price": 120000,
+  "image": "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/177511/maybach-gls-exterior-right-front-three-quarter-4.jpeg?isig=0&q=80&q=80",
+  "owner": "Nick Woltemade",
+  "city": "Stuttgart",
+  "createdAt": {
+    "$date": "2025-04-20T18:50:43.194Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-20T18:50:43.194Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6805426b4e066c645410d6bd"
+  },
+  "name": "Porsche 911 GT3",
+  "year": 2022,
+  "sale": false,
+  "rent": true,
+  "people": 2,
+  "engine": "4.0L H6",
+  "gearbox": "8 Speed Dual Clutch",
+  "gear": "Gasoline",
+  "price": 500000,
+  "image": "https://www.mclarencf.com/imagetag/334/4/l/Used-2022-Porsche-911-GT3-GT3.jpg",
+  "owner": "Əlihüseyn",
+  "city": "Edinburgh",
+  "createdAt": {
+    "$date": "2025-04-20T18:52:27.718Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-20T18:52:27.718Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "680542b54e066c645410d6bf"
+  },
+  "name": "Range Rover Evoque",
+  "year": 2020,
+  "sale": true,
+  "rent": false,
+  "people": 4,
+  "engine": "2.0L",
+  "gearbox": "Automatic",
+  "gear": "Diesel",
+  "price": 35000,
+  "image": "https://4x4vehiclehire.co.uk/wp-content/uploads/2014/09/rr_evq_12my_media_drive_280711_13_LowRes.jpg",
+  "owner": "Nuray",
+  "city": "Tokio",
+  "createdAt": {
+    "$date": "2025-04-20T18:53:41.556Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-20T18:53:41.556Z"
+  },
+  "__v": 0
+}]
