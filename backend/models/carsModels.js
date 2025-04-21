@@ -10,6 +10,18 @@ const carsSchema = new Schema({
         type: Number,
         required:true
     },
+    roof:{
+        type: String,
+        required: true
+    },
+    color:{
+        type: String,
+        required: true
+    },
+    mileage:{
+        type: Number,
+        required: true
+    },
     sale:{
         type: Boolean,
         required: true
