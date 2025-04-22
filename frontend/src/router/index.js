@@ -3,7 +3,7 @@ import AppCars from '../views/AppCars.vue'
 import AppLandingPage from '@/views/AppLandingPage.vue'
 import carDetails from '../components/CarDetail.vue'
 import account from '../views/AccountPage.vue'
-import signin from '../components/Signin.vue';
+import signin from '../components/Signin.vue'
 import login from '../components/Login.vue'
 
 const router = createRouter({
@@ -18,7 +18,7 @@ const router = createRouter({
       component: AppCars,
     },
     {
-      path: "/cars/:id",
+      path: '/cars/:id',
       component: carDetails,
     },
     {
@@ -34,6 +34,9 @@ const router = createRouter({
       component: login
     }
   ],
+  scrollBehavior(to, from, savedPosition) {
+    return { top: 0 }
+  }
 })
 
 export default router

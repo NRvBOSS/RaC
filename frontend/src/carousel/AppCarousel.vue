@@ -1,8 +1,8 @@
 <template>
   <swiper
     :style="{
-      '--swiper-navigation-color': '#fff',
-      '--swiper-pagination-color': '#fff',
+      '--swiper-navigation-color': '#D97706',
+      '--swiper-pagination-color': '#D97706',
     }"
     :speed="600"
     :parallax="true"
@@ -19,14 +19,14 @@
       :style="{ 'background-image': `url(${slide.image})` }"
     >
       <!-- Overlay -->
-      <div class="absolute inset-0 bg-black/50"></div>
+      <div class="absolute inset-0 bg-gray-900/70"></div>
 
       <!-- Text Content -->
       <div
-        class="relative text-center max-w-2xl text-2xl md:text-3xl font-bold drop-shadow-lg pt-20"
+        class="relative text-center max-w-2xl text-2xl md:text-3xl font-bold pt-20"
         data-swiper-parallax="-200"
       >
-        <span>{{ displayedText }}</span><span class="animate-blink">|</span>
+        <span class="text-amber-400">{{ displayedText }}</span><span class="animate-blink text-white">|</span>
       </div>
     </swiper-slide>
   </swiper>
@@ -74,7 +74,7 @@ export default {
         } else {
           clearInterval(interval);
         }
-      }, 23); // Hər hərf 23ms-dən bir çıxır
+      }, 23);
     };
 
     const handleSlideChange = (swiper) => {

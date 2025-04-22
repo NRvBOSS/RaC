@@ -1,35 +1,58 @@
 <template>
-  <div>
-    <div class="p-10 text-center">
-      <h1 class="text-3xl font-bold text-gray-800">Settings</h1>
-      <p class="mt-2 text-gray-600">Update your account information</p>
+  <div class="max-w-4xl mx-auto">
+    <div class="text-center mb-10">
+      <h1 class="text-3xl font-bold text-gray-900">Account Settings</h1>
+      <p class="mt-2 text-gray-600">Manage your personal information</p>
     </div>
 
-    <div class="flex flex-col gap-4 border border-gray-300 rounded-3xl w-[90%] max-w-xl mx-auto p-6 shadow-md">
-      <div>
-        <label class="block mb-1 font-medium text-gray-700">Name</label>
-        <input type="text" class="w-full border border-gray-300 rounded-xl p-3 focus:outline-none focus:ring-2 focus:ring-green-400" />
+    <div class="bg-white rounded-xl shadow-md border border-gray-200 p-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div>
+          <label class="block mb-2 text-sm font-medium text-gray-700">First Name</label>
+          <input 
+            type="text" 
+            class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent"
+            placeholder="John"
+          >
+        </div>
+        
+        <div>
+          <label class="block mb-2 text-sm font-medium text-gray-700">Last Name</label>
+          <input 
+            type="text" 
+            class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent"
+            placeholder="Doe"
+          >
+        </div>
+        
+        <div>
+          <label class="block mb-2 text-sm font-medium text-gray-700">Phone Number</label>
+          <input 
+            type="tel" 
+            class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent"
+            placeholder="+994 77 123 45 67"
+          >
+        </div>
+        
+        <div>
+          <label class="block mb-2 text-sm font-medium text-gray-700">Email</label>
+          <input 
+            type="email" 
+            class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent"
+            placeholder="your@email.com"
+          >
+        </div>
       </div>
 
-      <div>
-        <label class="block mb-1 font-medium text-gray-700">Surname</label>
-        <input type="text" class="w-full border border-gray-300 rounded-xl p-3 focus:outline-none focus:ring-2 focus:ring-green-400" />
-      </div>
-
-      <div>
-        <label class="block mb-1 font-medium text-gray-700">Phone</label>
-        <input type="number" class="w-full border border-gray-300 rounded-xl p-3 focus:outline-none focus:ring-2 focus:ring-green-400" />
-      </div>
-
-      <div>
-        <label class="block mb-1 font-medium text-gray-700">Email</label>
-        <input type="email" class="w-full border border-gray-300 rounded-xl p-3 focus:outline-none focus:ring-2 focus:ring-green-400" />
-      </div>
-
-      <div class="flex justify-end mt-6">
-        <router-link to="/signin" class="bg-green-500 text-white px-6 py-3 rounded-xl hover:bg-green-600 transition duration-200">
-          Update
-        </router-link>
+      <div class="mt-10 pt-6 border-t border-gray-200 flex justify-end">
+        <button
+          class="bg-amber-600 hover:bg-amber-700 text-white font-medium px-6 py-3 rounded-lg shadow-sm transition-colors duration-300 flex items-center"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+          </svg>
+          Save Changes
+        </button>
       </div>
     </div>
   </div>

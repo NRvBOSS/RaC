@@ -1,47 +1,61 @@
 <template>
   <div
-    class="fixed inset-0 bg-black/30 backdrop-blur-sm flex justify-center items-center z-50"
+    class="fixed inset-0 bg-gray-900/80 backdrop-blur-sm flex justify-center items-center z-50"
   >
-    <div class="bg-white p-8 rounded-3xl w-[90%] max-w-md shadow-lg">
-      <h2 class="text-3xl font-bold mb-6 text-center text-gray-800">
-        Login to Your Account
-      </h2>
-
-      <div class="mb-4">
-        <label class="block mb-1 text-gray-700">Email</label>
-        <input
-          type="email"
-          class="w-full border px-4 py-2 rounded-xl focus:outline-none focus:ring-2 focus:ring-green-500"
-        />
+    <div
+      class="bg-white p-8 rounded-xl w-[90%] max-w-md shadow-xl border border-gray-200"
+    >
+      <div class="text-center mb-8">
+        <h2 class="text-3xl font-bold text-gray-900">Login to Your Account</h2>
+        <p class="text-gray-600 mt-2">
+          Access your vehicle management dashboard
+        </p>
       </div>
 
-      <div class="mb-6">
-        <label class="block mb-1 text-gray-700">Password</label>
-        <input
-          type="password"
-          class="w-full border px-4 py-2 rounded-xl focus:outline-none focus:ring-2 focus:ring-green-500"
-        />
-      </div>
+      <div class="space-y-5">
+        <div>
+          <label class="block mb-2 text-sm font-medium text-gray-700"
+            >Email</label
+          >
+          <input
+            type="email"
+            class="w-full border border-gray-300 px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent"
+            placeholder="your@email.com"
+          />
+        </div>
 
-      <div class="flex justify-between items-center text-sm text-gray-600 mb-4">
-        <p>Don't have an account?</p>
-        <router-link
-          to="/signin"
-          class="text-green-600 hover:underline font-semibold"
-        >
-          Create one
-        </router-link>
-      </div>
+        <div>
+          <label class="block mb-2 text-sm font-medium text-gray-700"
+            >Password</label
+          >
+          <input
+            type="password"
+            class="w-full border border-gray-300 px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent"
+            placeholder="••••••••"
+          />
+        </div>
 
-      <div class="flex justify-end gap-4">
-        <button class="px-4 py-2 bg-gray-300 rounded-xl hover:bg-gray-400">
-          Cancel
-        </button>
-        <button
-          class="px-4 py-2 bg-green-500 text-white rounded-xl hover:bg-green-600"
-        >
-          Sign In
-        </button>
+        <div class="flex justify-between items-center text-sm">
+          <router-link
+            to="/signin"
+            class="text-amber-600 hover:underline font-medium"
+          >
+            Create account
+          </router-link>
+        </div>
+
+        <div class="flex gap-4 pt-4">
+          <button
+            class="flex-1 px-4 py-3 bg-gray-200 text-gray-800 rounded-lg hover:bg-gray-300 transition-colors"
+          >
+            Cancel
+          </button>
+          <button
+            class="flex-1 px-4 py-3 bg-amber-600 text-white rounded-lg hover:bg-amber-700 transition-colors font-medium"
+          >
+            Sign In
+          </button>
+        </div>
       </div>
     </div>
   </div>

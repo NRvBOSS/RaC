@@ -1,73 +1,187 @@
 <template>
-  <!-- Highlighted -->
-  <div class="flex justify-between">
-    <h2 class="text-black font-bold pl-10 text-5xl pt-10">Highlighted</h2>
-    <router-link
-      to="/cars"
-      class="text-black mx-10 mt-20 group inline-block relative"
+  <div class="bg-gray-50 py-12">
+    <div class="flex justify-between items-center px-10">
+      <h2 class="text-4xl font-bold text-gray-900">Featured Vehicles</h2>
+      <router-link
+        to="/cars"
+        class="text-amber-600 hover:text-amber-700 font-medium flex items-center group"
+      >
+        View all
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-5 w-5 ml-1 group-hover:translate-x-1 transition-transform"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M9 5l7 7-7 7"
+          />
+        </svg>
+      </router-link>
+    </div>
+
+    <div class="border-t border-gray-300 mx-10 my-6"></div>
+
+    <div
+      class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mx-10"
     >
-      View all &rarr;
-      <div
-        class="bg-black h-[2px] w-full scale-x-0 origin-center group-hover:scale-x-100 transition-transform duration-500"
-      ></div>
-    </router-link>
-  </div>
-
-  <!-- Border -->
-  <div class="border mx-10 my-4"></div>
-
-  <!-- Cards -->
-  <div class="py-10 px-10">
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
       <div
         v-for="item in highlightedItems"
         :key="item.id"
-        class="bg-gray-100 rounded-2xl overflow-hidden shadow-lg flex-1 min-w-[300px]"
+        class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300 flex flex-col h-full border border-gray-200 relative"
       >
-        <img
-          class="w-full h-52 object-cover rounded-t-2xl"
-          :src="item.image"
-          alt="item.name"
-        />
+        <!-- Badge -->
+        <div class="absolute top-3 left-3 z-10">
+          <span
+            class="px-3 py-1 rounded-full text-sm font-semibold"
+            :class="
+              item.sale
+                ? 'bg-green-100 text-green-800'
+                : 'bg-blue-100 text-blue-800'
+            "
+          >
+            {{ item.sale ? "FOR SALE" : "FOR RENT" }}
+          </span>
+        </div>
 
-        <div class="p-4">
-          <div class="flex justify-between">
-            <div class="">
-              <p class="text-black font-bold text-2xl">{{ item.name }}</p>
-              <p class="font-bold text-black">Year: {{ item.year }}</p>
-            </div>
+        <!-- Car Image -->
+        <div class="relative h-56 overflow-hidden group">
+          <img
+            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+            :src="
+              item.image ||
+              'https://via.placeholder.com/400x250?text=Vehicle+Image'
+            "
+            :alt="item.name"
+          />
+          <div
+            class="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"
+          ></div>
+        </div>
 
-            <div class="flex font-bold text-2xl border rounded-2xl py-2 px-4">
-              <p v-if="item.sale">Sale</p>
-              <p v-else-if="item.rent">Rent</p>
+        <!-- Car Info -->
+        <div class="p-5 flex-grow">
+          <div class="mb-4">
+            <h3 class="text-xl font-bold text-gray-900 mb-1">
+              {{ item.name }}
+            </h3>
+            <div class="flex items-center text-gray-600">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-4 w-4 mr-1"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                />
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                />
+              </svg>
+              {{ item.city || "Location not specified" }}
             </div>
           </div>
 
-          <!-- Car info -->
-
-          <div class="flex justify-between mt-2">
-            <div>
-              <p>People: {{ item.people }}</p>
-              <p>Engine: {{ item.engine }}</p>
+          <!-- Specifications -->
+          <div class="grid grid-cols-2 gap-4 text-sm mb-6">
+            <div class="flex items-center">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-4 w-4 mr-2 text-amber-600"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M13 10V3L4 14h7v7l9-11h-7z"
+                />
+              </svg>
+              <span>{{ item.engine }}</span>
             </div>
-            <div>
-              <p>Gearbox: {{ item.gearbox }}</p>
-              <p>Gear: {{ item.gear }}</p>
+            <div class="flex items-center">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-4 w-4 mr-2 text-amber-600"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"
+                />
+              </svg>
+              <span>{{ item.people }} seats</span>
+            </div>
+            <div class="flex items-center">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-4 w-4 mr-2 text-amber-600"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"
+                />
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
+                />
+              </svg>
+              <span>{{ item.gearbox }}</span>
+            </div>
+            <div class="flex items-center">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-4 w-4 mr-2 text-amber-600"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"
+                />
+              </svg>
+              <span>{{ item.gear }}</span>
             </div>
           </div>
         </div>
 
-        <!-- Sep -->
-        <div class="border mx-4"></div>
-
-        <!-- Price -->
-        <div class="flex justify-between items-center p-4">
-          <p class="font-bold text-black">Price: {{ item.price }} $</p>
-          <button
-            class="bg-black text-white cursor-pointer hover:bg-gray-500 duration-300 p-2 rounded-lg"
-          >
-            View Details
-          </button>
+        <!-- Price and CTA -->
+        <div class="border-t border-gray-200 mx-5"></div>
+        <div class="p-5 flex justify-between items-center">
+          <div>
+            <p class="text-xs text-gray-500">STARTING FROM</p>
+            <p class="text-xl font-bold text-gray-900">
+              ${{ item.price.toLocaleString() }}
+            </p>
+          </div>
         </div>
       </div>
     </div>
@@ -83,83 +197,47 @@ const highlightedItems = ref([
     image:
       "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/2019_Toyota_RAV4_LE_2.5L_front_4.14.19.jpg/640px-2019_Toyota_RAV4_LE_2.5L_front_4.14.19.jpg",
     name: "Toyota RAV4",
-    year: "2021",
     people: 4,
     engine: "2.5L 4-cylinder",
     gearbox: "Automatic",
     gear: "Hybrid",
-    price: 65000,
+    price: 500,
     sale: false,
-    rent: true,
   },
   {
     id: 2,
     image:
       "https://eu-images.contentstack.com/v3/assets/blt0bbd1b20253587c0/blta5f44858165dd4d2/66e0c1aea7bc54030f238993/2024_AudiRS7_performance_Nardo_grey.jpg",
     name: "Audi RS7",
-    year: "2015",
     people: 4,
     engine: "4.0L 4-cylinder",
     gearbox: "Automatic",
     gear: "Oil",
     price: 75480,
     sale: true,
-    rent: false,
   },
   {
     id: 3,
-    image:
-      "https://i.ytimg.com/vi/gldCFSrad3Y/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLAxXQMpweUBrMfvVNTidK7748ul4w",
+    image: "https://i.ytimg.com/vi/gldCFSrad3Y/hq720.jpg",
     name: "Lincoln MKZ",
-    year: "2017",
     people: 4,
     engine: "2.0L 4-cylinder",
     gearbox: "Variator",
     gear: "Hybrid",
     price: 34500,
     sale: true,
-    rent: false,
   },
   {
     id: 4,
-    image:
-      "https://www.topgear.com/sites/default/files/2022/03/11-Aston-Martin-DBX-707.jpg",
-    name: "Aston Martin DBX",
-    year: "2025",
+    image: 'https://www.auto-data.net/images/f0/Opel-Astra-G-Caravan.jpg',
+    name: 'Opel Astra',
+    year: '1998',
     people: 4,
-    engine: "4.0L V8",
-    gearbox: "Automatic",
-    gear: "Oil",
-    price: 250000,
-    sale: false,
-    rent: true,
-  },
-  {
-    id: 5,
-    image:
-      "https://directimports.com.br/wp-content/uploads/2023/05/alfa-romeo-stelvio-quadrifoglio-2023-15.webp",
-    name: "Alfa Romeo Stelvio",
-    year: "2023",
-    people: 4,
-    engine: "2.9L 4-cylinder",
-    gearbox: "Automatic",
-    gear: "Oil",
-    price: 202470,
-    sale: true,
-    rent: false,
-  },
-  {
-    id: 6,
-    image: "https://www.auto-data.net/images/f0/Opel-Astra-G-Caravan.jpg",
-    name: "Opel Astra",
-    year: "1998",
-    people: 4,
-    engine: "1.8L Caravan",
-    gearbox: "Automatic",
-    gear: "Oil",
-    price: 8000,
-    sale: false,
-    rent: true,
-  },
+    engine: '1.8L Caravan',
+    gearbox: 'Automatic',
+    gear: 'Oil',
+    price: 50,
+    sale: false
+  }
 ]);
 </script>

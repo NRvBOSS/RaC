@@ -1,81 +1,59 @@
 <template>
-  <!-- Footer component -->
-  <footer class="bg-gray-900 text-white p-6">
-    <!-- Main div -->
-    <div class="container mx-auto flex">
-      <!-- Contact div -->
-      <div class="grid">
-        <div class="grid gap-2">
-          <p class="font-bold py-5">Contact Us</p>
-          <li class="list-none">
-            Telefon: <a class="hover:text-blue-400" href="">0777175696</a>
+  <footer class="bg-gray-900 text-white py-12 px-6">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+      <!-- Contact Section -->
+      <div>
+        <h3 class="text-xl font-bold mb-6 text-amber-500">Contact Us</h3>
+        <ul class="space-y-3">
+          <li class="flex items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-3 text-amber-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+            </svg>
+            <a href="tel:0777175696" class="hover:text-amber-400 transition-colors">077 717 56 96</a>
           </li>
-          <li class="list-none">
-            Email:
-            <a class="hover:text-blue-400" href="">nrv.corporation@gmail.com</a>
+          <li class="flex items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-3 text-amber-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+            </svg>
+            <a href="mailto:nrv.corporation@gmail.com" class="hover:text-amber-400 transition-colors">nrv.corporation@gmail.com</a>
           </li>
-        </div>
-        <div>
-          <p class="font-bold mt-6">Follow us</p>
-          <div class="flex">
-            <a
-              v-for="image in images"
-              :key="image.id"
-              :href="image.href"
-              class="w-8 h-8 my-4 m-4 transition duration-300 ease-in-out hover:scale-110 cursor-pointer"
-            >
-              <img :src="image.src"
-            </a>
-          </div>
+        </ul>
+
+        <h3 class="text-xl font-bold mt-10 mb-4 text-amber-500">Follow Us</h3>
+        <div class="flex space-x-4">
+          <a v-for="image in images" :key="image.id" :href="image.href" target="_blank" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-amber-600 transition-colors">
+            <img :src="image.src" class="w-6 h-6" :alt="'Social icon ' + image.id">
+          </a>
         </div>
       </div>
 
-      <!-- Cars div -->
-      <div class="grid ml-70">
-        <div class="grid gap-2">
-          <p class="font-bold py-5">Cars</p>
-          <li class="list-none">
-            <a class="hover:text-blue-400" href="">Toyota</a>
+      <!-- Vehicles Section -->
+      <div>
+        <h3 class="text-xl font-bold mb-6 text-amber-500">Our Vehicles</h3>
+        <ul class="space-y-3">
+          <li v-for="brand in ['Toyota', 'Nissan', 'Porsche', 'Audi', 'Mercedes-Benz']" :key="brand">
+            <a href="#" class="hover:text-amber-400 transition-colors">{{ brand }}</a>
           </li>
-          <li class="list-none">
-            <a class="hover:text-blue-400" href="">Nissan</a>
-          </li>
-          <li class="list-none">
-            <a class="hover:text-blue-400" href="">Porsche</a>
-          </li>
-          <li class="list-none">
-            <a class="hover:text-blue-400" href="">Audi</a>
-          </li>
-          <li class="list-none">
-            <a class="hover:text-blue-400" href="">Mercedes-Benz</a>
-          </li>
-        </div>
+        </ul>
       </div>
 
-      <!-- Locations div -->
-      <div class="grid ml-110">
-        <div class="grid gap-2">
-          <p class="font-bold py-5">Locations</p>
-          <li class="list-none hover:text-blue-400"><a href="">Baku</a></li>
-          <li class="list-none hover:text-blue-400"><a href="">Berlin</a></li>
-          <li class="list-none hover:text-blue-400"><a href="">Tokio</a></li>
-          <li class="list-none hover:text-blue-400"><a href="">Basel</a></li>
-          <li class="list-none hover:text-blue-400">
-            <a href="">Edinburgh</a>
+      <!-- Locations Section -->
+      <div>
+        <h3 class="text-xl font-bold mb-6 text-amber-500">Locations</h3>
+        <ul class="space-y-3">
+          <li v-for="city in ['Baku', 'Berlin', 'Tokyo', 'Basel', 'Edinburgh']" :key="city">
+            <a href="#" class="hover:text-amber-400 transition-colors">{{ city }}</a>
           </li>
-        </div>
+        </ul>
       </div>
     </div>
-    <div class="border-t border-gray-700 my-4"></div>
-    <p class="text-center text-sm">
-      Copyright &copy; {{ currentYear }} | Powered by
-      <a
-        href="https://nirvanatech.vercel.app/"
-        class="text-blue-400"
-        target="_blank"
-        >Nirvana Tech</a
-      >
-    </p>
+
+    <div class="border-t border-gray-700 mt-12 pt-6">
+      <p class="text-center text-sm text-gray-400">
+        Copyright &copy; {{ currentYear }} | Powered by
+        <a href="https://nirvanatech.vercel.app/" class="text-amber-400 hover:text-amber-300" target="_blank">Nirvana Tech</a>
+      </p>
+    </div>
   </footer>
 </template>
 
@@ -85,12 +63,12 @@ import { ref } from "vue";
 const images = ref([
   {
     id: 1,
-    src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQlBu_Gia8ZgrUM1GO6xVd5RmieEkgbQKmCAadYpOunCfoY12LlzUfwOFShVg9UhE-PSrw&usqp=CAU",
+    src: "https://cdn-icons-png.flaticon.com/512/174/174857.png",
     href: "https://www.linkedin.com/in/%C9%99lih%C3%BCseyn-ba%C4%9F%C4%B1rov-b46315267/",
   },
   {
     id: 2,
-    src: "https://static-00.iconduck.com/assets.00/github-icon-2048x2048-iw6ut8fe.png",
+    src: "https://cdn-icons-png.flaticon.com/512/25/25231.png",
     href: "https://github.com/NRvBOSS",
   },
 ]);
