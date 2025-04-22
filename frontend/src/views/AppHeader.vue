@@ -1,3 +1,7 @@
+<script setup>
+
+</script>
+
 <template>
   <header
     class="flex fixed justify-between items-center top-0 left-0 w-full p-4 flex-wrap bg-black/30 backdrop-blur-sm z-50"
