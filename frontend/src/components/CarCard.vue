@@ -3,8 +3,8 @@
     <!-- Search Results Header -->
     <div class="mb-8 flex justify-between items-center">
       <h2 class="text-3xl font-bold text-gray-900">
-        <span v-if="route.query.search">Search Results for "{{ route.query.search }}"</span>
-        <span v-else>Premium Fleet</span>
+        <span></span>
+        <span>Premium Fleet</span>
       </h2>
       <p class="text-gray-600 font-medium">{{ filteredCars.length }} vehicles available</p>
     </div>

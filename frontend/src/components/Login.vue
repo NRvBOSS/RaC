@@ -1,3 +1,8 @@
+<script setup lang="ts">
+import router from '@/router';
+
+</script>
+
 <template>
   <div
     class="fixed inset-0 bg-gray-900/80 backdrop-blur-sm flex justify-center items-center z-50"
@@ -44,17 +49,17 @@
           </router-link>
         </div>
 
-        <div class="flex gap-4 pt-4">
-          <button
+        <div class="flex gap-4 pt-4 text-center">
+          <router-link to="/cars"
             class="flex-1 px-4 py-3 bg-gray-200 text-gray-800 rounded-lg hover:bg-gray-300 transition-colors"
           >
             Cancel
-          </button>
-          <button
+          </router-link>
+          <router-link to="/cars/account"
             class="flex-1 px-4 py-3 bg-amber-600 text-white rounded-lg hover:bg-amber-700 transition-colors font-medium"
           >
             Sign In
-          </button>
+          </router-link>
         </div>
       </div>
     </div>

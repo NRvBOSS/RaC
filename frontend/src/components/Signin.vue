@@ -53,15 +53,15 @@
           </router-link>
         </div>
 
-        <div class="flex gap-4 pt-4">
-          <button class="flex-1 px-4 py-3 bg-gray-200 text-gray-800 rounded-lg hover:bg-gray-300 transition-colors">
+        <div class="flex gap-4 pt-4 text-center">
+          <router-link to="/cars" class="flex-1 px-4 py-3 bg-gray-200 text-gray-800 rounded-lg hover:bg-gray-300 transition-colors">
             Cancel
-          </button>
-          <button
+          </router-link>
+          <router-link to="/cars/account"
             class="flex-1 px-4 py-3 bg-amber-600 text-white rounded-lg hover:bg-amber-700 transition-colors font-medium"
           >
             Create Account
-          </button>
+          </router-link>
         </div>
       </div>
     </div>

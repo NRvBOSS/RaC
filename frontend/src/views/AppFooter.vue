@@ -68,7 +68,7 @@ const images = ref([
   },
   {
     id: 2,
-    src: "https://cdn-icons-png.flaticon.com/512/25/25231.png",
+    src: "https://cdn.creazilla.com/icons/7915997/github-icon-lg.png",
     href: "https://github.com/NRvBOSS",
   },
 ]);
