@@ -14,8 +14,18 @@ const userSchema = new Schema({
     },
     password:{
         type: String,
-        required: true
-    },  
+        required: true,
+        minLength: 6
+    },
+    phone:{
+        type: Number,
+        required: true,
+        unique: true
+    },
+    date:{
+        type: Date,
+        default: Date.now
+    }
 }, { timestamps: true});
 
 module.exports = mongoose.model('User', userSchema);

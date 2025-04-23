@@ -34,9 +34,9 @@
         <div class="absolute top-3 left-3 z-10">
           <span 
             class="px-3 py-1 rounded-full text-sm font-semibold"
-            :class="car.sale ? 'bg-green-100 text-green-800' : 'bg-blue-100 text-blue-800'"
+            :class="car.sale || car.rent ? 'bg-green-100 text-green-800' : 'bg-blue-100 text-blue-800'"
           >
-            {{ car.sale ? 'FOR SALE' : 'FOR RENT' }}
+            {{ car.sale || car.rent ? 'FOR SALE' : 'FOR RENT' }}
           </span>
         </div>
 
