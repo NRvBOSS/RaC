@@ -28,7 +28,7 @@
       <div
         v-for="car in filteredCars"
         :key="car.id"
-        class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300 flex flex-col h-full border border-gray-200"
+        class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-2xl transition-shadow duration-300 flex flex-col h-full border border-gray-200"
       >
         <!-- Badge -->
         <div class="absolute top-3 left-3 z-10">
