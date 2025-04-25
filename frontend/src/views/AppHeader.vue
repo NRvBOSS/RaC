@@ -59,7 +59,7 @@ const handleSearch = () => {
 
     <!-- Sign In Button -->
     <router-link
-      to="/cars/account"
+      to="/signin"
       class="duration-300 mr-6 hover:bg-gray-700 rounded-full transition-all border border-gray-600"
       href="#"
     >

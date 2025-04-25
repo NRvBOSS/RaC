@@ -28,7 +28,7 @@ const handleAddCar = () => {
 
     <!-- Add Car Button -->
     <div class="flex justify-end px-10">
-      <router-link to="/login"
+      <router-link to=""
         class="bg-amber-600 hover:bg-amber-700 text-white font-semibold py-3 px-6 rounded-lg shadow-md transition duration-300 ease-in-out flex items-center"
       >
         <svg
