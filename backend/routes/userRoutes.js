@@ -2,7 +2,8 @@ const router = require('express').Router();
 const {
     getAllUsers,
     getUserById,
-    createUser,
+    signInUser,
+    loginUser,
     deleteUser,
     delAllUsers,
     updateUser
@@ -15,7 +16,10 @@ router.get('/', getAllUsers)
 router.get('/:id', getUserById)
 
 // Create new user
-router.post('/', createUser)
+router.post('/signin', signInUser)
+
+// Create new user
+router.post('/login', loginUser)
 
 // Update user
 router.patch('/:id', updateUser)
