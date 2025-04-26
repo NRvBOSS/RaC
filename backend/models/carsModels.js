@@ -12,7 +12,7 @@ const carsSchema = new Schema({
     },
     ban:{
         type: String,
-        required: true
+        required: true,
     },
     color:{
         type: String,
@@ -36,15 +36,17 @@ const carsSchema = new Schema({
     },
     engine:{
         type: String,
-        required: true
+        required: true,
     },
     gearbox:{
         type: String,
-        required: true
+        required: true,
+        enum: ['Automatic', 'Manual']
     },
     gear:{
         type: String,
-        required: true
+        required: true,
+        enum: ['Hybrid', 'Petrol', 'Diesel', 'Electric']
     },
     price:{
         type: Number,

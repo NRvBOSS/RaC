@@ -5,6 +5,7 @@ import carDetails from '../components/CarDetail.vue'
 import account from '../views/AccountPage.vue'
 import signin from '../components/Signin.vue'
 import login from '../components/Login.vue'
+import carform from '../components/CreateCarForm.vue'
 
 const router = createRouter({
   history: createWebHistory(),
@@ -23,15 +24,28 @@ const router = createRouter({
     },
     {
       path: '/cars/account',
-      component: account
+      component: account,
+      meta: {
+        requiresAuth: true // need authentication
+      }
     },
     {
       path: '/signin',
-      component: signin
+      component: signin,
+      meta: {
+        requiresGuest: true // only for guests
+      }
+    },
+    {
+      path: '/add-car',
+      component: carform,
     },
     {
       path: '/login',
-      component: login
+      component: login,
+      meta: {
+        requiresGuest: true // only for guests
+      },
     }
   ],
   scrollBehavior(to, from, savedPosition) {

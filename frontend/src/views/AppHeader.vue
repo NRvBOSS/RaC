@@ -1,15 +1,42 @@
-<script setup>
-import { ref } from "vue";
+<script>
+import { ref, inject } from "vue";
 import { useRouter } from "vue-router";
 
-const search = ref("");
-const router = useRouter();
+export default {
+  setup(_, { emit }) {
+    const search = ref("");
+    const router = useRouter();
+    const isAuthenticated = ref(false);
 
-const handleSearch = () => {
-  router.push({
-    path: "/cars",
-    query: { search: search.value.trim().toLowerCase() },
-  });
+    // Burada localStorage yoxlayırıq
+    const token = localStorage.getItem("token");
+    if (token) {
+      isAuthenticated.value = true;
+    }
+
+    const handleSearch = () => {
+      router.push({
+        path: "/cars",
+        query: { search: search.value.trim().toLowerCase() },
+      });
+    };
+
+    const openLoginModal = () => {
+      router.push("/signin")
+    };
+
+    const goToAccount = () => {
+      router.push("/cars/account");
+    };
+
+    return {
+      search,
+      handleSearch,
+      isAuthenticated,
+      openLoginModal,
+      goToAccount,
+    };
+  },
 };
 </script>
 
@@ -57,17 +84,17 @@ const handleSearch = () => {
       </button>
     </div>
 
-    <!-- Sign In Button -->
-    <router-link
-      to="/signin"
-      class="duration-300 mr-6 hover:bg-gray-700 rounded-full transition-all border border-gray-600"
-      href="#"
-    >
-      <img
-        class="w-10 h-10 hover:scale-110 transition-transform bg-white rounded-full"
-        src="https://cdn-icons-png.flaticon.com/512/3276/3276535.png"
-        alt="Account"
-      />
-    </router-link>
+    <!-- Account Icon or Sign In Button -->
+    <div>
+      <button
+        @click="isAuthenticated ? goToAccount() : openLoginModal()"
+        class="duration-300 mr-6 hover:bg-gray-700 rounded-full transition-all border border-gray-600 cursor-pointer"
+      >
+        <img
+          class="w-10 h-10 hover:scale-110 transition-transform bg-white rounded-full"
+          src="https://cdn-icons-png.flaticon.com/512/3276/3276535.png"
+        />
+      </button>
+    </div>
   </header>
 </template>

@@ -6,6 +6,18 @@ import Settings from "@/components/Settings.vue";
 
 const currentTab = ref("dashboard");
 
+const logout = () => {
+  localStorage.removeItem("token");
+  localStorage.removeItem("name");
+  localStorage.removeItem("phone");
+  localStorage.removeItem("email");
+  localStorage.removeItem("userId");
+
+  window.dispatchEvent(new CustomEvent("auth-change"));
+  alert("You have been logged out.");
+  window.location.href = "/login";
+};
+
 const currentViewComponent = computed(() => {
   switch (currentTab.value) {
     case "dashboard":
@@ -124,7 +136,7 @@ const currentViewComponent = computed(() => {
       </div>
 
       <button
-        @click="currentTab = 'logout'"
+        @click="logout"
         class="flex items-center gap-3 px-4 py-3 rounded-lg text-left mt-4 bg-red-600 hover:bg-red-700 transition-colors duration-300"
       >
         <svg

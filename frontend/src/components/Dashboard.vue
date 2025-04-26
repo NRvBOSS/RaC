@@ -1,5 +1,20 @@
 <script setup>
-import { ref } from "vue";
+import { onMounted, ref } from "vue";
+
+onMounted(() => {
+  const token = localStorage.getItem("token");
+  const name = localStorage.getItem("name");
+
+  console.log("TOKEN:", token);
+  console.log("NAME:", name);
+
+  if (!token) {
+    alert("Please log in to access this page");
+    window.location.href = "/login";
+  } else {
+    document.querySelector("h1").innerText = `Welcome, ${name} 👋`;
+  }
+});
 
 const cars = ref(Array.from({ length: 12 }));
 const handleAddCar = () => {
@@ -12,9 +27,7 @@ const handleAddCar = () => {
     <!-- Header -->
     <div class="flex justify-between items-center p-6">
       <div>
-        <h1 class="text-3xl font-extrabold text-gray-900">
-          Welcome, John Doe 👋
-        </h1>
+        <h1 class="text-3xl font-extrabold text-gray-900"></h1>
         <p class="text-lg text-gray-600 mt-1">Your listed vehicles:</p>
       </div>
       <img
@@ -28,7 +41,8 @@ const handleAddCar = () => {
 
     <!-- Add Car Button -->
     <div class="flex justify-end px-10">
-      <router-link to=""
+      <router-link
+      to="/add-car"
         class="bg-amber-600 hover:bg-amber-700 text-white font-semibold py-3 px-6 rounded-lg shadow-md transition duration-300 ease-in-out flex items-center"
       >
         <svg

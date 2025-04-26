@@ -2,33 +2,32 @@ const router = require('express').Router();
 const {
     getAllUsers,
     getUserById,
-    signInUser,
+    registerUser,
     loginUser,
+    updateUser,
     deleteUser,
-    delAllUsers,
-    updateUser
-} = require('../controllers/userControllers')
+    deleteAllUsers
+} = require('../controllers/userControllers');
 
-// GET all users
-router.get('/', getAllUsers)
+// Get all users
+router.get('/', getAllUsers);
 
-// Get user by email
-router.get('/:id', getUserById)
+// Get user by ID
+router.get('/:id', getUserById);
 
-// Create new user
-router.post('/signin', signInUser)
+// Register new user
+router.post('/register', registerUser);
 
-// Create new user
-router.post('/login', loginUser)
+// Login user
+router.post('/login', loginUser);
 
 // Update user
-router.patch('/:id', updateUser)
+router.patch('/:id', updateUser);
 
-// Delete user
-router.delete('/:id', deleteUser)
+// Delete user by ID
+router.delete('/:id', deleteUser);
 
-// DELETE all users
-router.delete('/', delAllUsers)
-
+// Delete all users
+router.delete('/', deleteAllUsers);
 
 module.exports = router;
