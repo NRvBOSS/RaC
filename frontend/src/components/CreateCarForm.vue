@@ -1,62 +1,62 @@
 <template>
-  <div class="min-h-screen bg-gray-100 py-8">
+  <div class="min-h-screen bg-gray-100 py-8 px-4">
     <form
       @submit.prevent="addCar"
       method="post"
-      class="max-w-md mx-auto p-8 bg-white rounded-xl shadow-lg transform transition-all hover:shadow-2xl"
+      class="max-w-4xl mx-auto p-8 bg-white rounded-xl shadow-lg grid grid-cols-1 md:grid-cols-2 gap-8"
     >
-      <div class="flex items-center justify-between mb-6">
-        <h2 class="text-3xl font-bold text-orange-600">Add New Car</h2>
-        <i class="fas fa-car text-orange-500 text-2xl"></i>
-      </div>
+      <div class="md:col-span-2">
+        <div class="flex items-center justify-between mb-6">
+          <h2 class="text-3xl font-bold text-orange-600">Add New Car</h2>
+          <i class="fas fa-car text-orange-500 text-2xl"></i>
+        </div>
 
-      <!-- Sahib məlumatları bölməsi -->
-      <div
-        class="mb-6 p-4 bg-orange-50 rounded-lg border-l-4 border-orange-500"
-      >
-        <h3 class="font-bold text-orange-700 mb-2 flex items-center">
-          <i class="fas fa-user-circle mr-2"></i> Owner Information
-        </h3>
-        <div class="grid grid-cols-2 gap-4">
-          <div>
-            <p class="text-sm text-gray-600">Name</p>
-            <p class="font-medium">{{ ownerInfo.name || "Loading..." }}</p>
-          </div>
-          <div>
-            <p class="text-sm text-gray-600">Phone</p>
-            <p class="font-medium">{{ ownerInfo.phone || "Loading..." }}</p>
+        <!-- Sahib məlumatları bölməsi -->
+        <div
+          class="mb-6 p-4 bg-orange-50 rounded-lg border-l-4 border-orange-500"
+        >
+          <h3 class="font-bold text-orange-700 mb-2 flex items-center">
+            <i class="fas fa-user-circle mr-2"></i> Owner Information
+          </h3>
+          <div class="grid grid-cols-2 gap-4">
+            <div>
+              <p class="text-sm text-gray-600">Name</p>
+              <p class="font-medium">{{ ownerInfo.name || "Loading..." }}</p>
+            </div>
+            <div>
+              <p class="text-sm text-gray-600">Phone</p>
+              <p class="font-medium">{{ ownerInfo.phone || "Loading..." }}</p>
+            </div>
           </div>
         </div>
       </div>
 
-      <!-- Form Fields -->
+      <!-- Left Column -->
       <div class="space-y-5">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
-          <div>
-            <label class="flex items-center text-gray-700 mb-1 font-medium">
-              <i class="fas fa-car mr-2 text-orange-500"></i> Name
-            </label>
-            <input
-              v-model="carData.name"
-              type="text"
-              required
-              class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-300 focus:border-transparent transition"
-            />
-          </div>
+        <div>
+          <label class="flex items-center text-gray-700 mb-1 font-medium">
+            <i class="fas fa-car mr-2 text-orange-500"></i> Name
+          </label>
+          <input
+            v-model="carData.name"
+            type="text"
+            required
+            class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-300 focus:border-transparent transition"
+          />
+        </div>
 
-          <div>
-            <label class="flex items-center text-gray-700 mb-1 font-medium">
-              <i class="fas fa-calendar-alt mr-2 text-orange-500"></i> Year
-            </label>
-            <input
-              v-model="carData.year"
-              type="number"
-              min="1900"
-              :max="new Date().getFullYear()"
-              required
-              class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-300"
-            />
-          </div>
+        <div>
+          <label class="flex items-center text-gray-700 mb-1 font-medium">
+            <i class="fas fa-calendar-alt mr-2 text-orange-500"></i> Year
+          </label>
+          <input
+            v-model="carData.year"
+            type="number"
+            min="1900"
+            :max="new Date().getFullYear()"
+            required
+            class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-300"
+          />
         </div>
 
         <div>
@@ -103,6 +103,21 @@
           />
         </div>
 
+        <div>
+          <label class="flex items-center text-gray-700 mb-1 font-medium">
+            <i class="fas fa-image mr-2 text-orange-500"></i> Image URL
+          </label>
+          <input
+            v-model="carData.image"
+            type="url"
+            required
+            class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-300"
+          />
+        </div>
+      </div>
+
+      <!-- Right Column -->
+      <div class="space-y-5">
         <div class="grid grid-cols-2 gap-4">
           <div class="flex items-center bg-gray-50 p-3 rounded-lg">
             <input
@@ -141,34 +156,32 @@
           />
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
-          <div>
-            <label class="flex items-center text-gray-700 mb-1 font-medium">
-              <i class="fas fa-cog mr-2 text-orange-500"></i> Engine (L)
-            </label>
-            <input
-              v-model="carData.engine"
-              type="text"
-              required
-              class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-300"
-            />
-          </div>
+        <div>
+          <label class="flex items-center text-gray-700 mb-1 font-medium">
+            <i class="fas fa-cog mr-2 text-orange-500"></i> Engine (L)
+          </label>
+          <input
+            v-model="carData.engine"
+            type="text"
+            required
+            class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-300"
+          />
+        </div>
 
-          <div>
-            <label class="flex items-center text-gray-700 mb-1 font-medium">
-              <i class="fas fa-cogs mr-2 text-orange-500"></i> Gearbox
-            </label>
-            <select
-              v-model="carData.gearbox"
-              required
-              class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-300"
-            >
-              <option value="" disabled selected>Select gearbox</option>
-              <option value="Automatic">Automatic</option>
-              <option value="Manual">Manual</option>
-              <option value="Semi-automatic">Semi-automatic</option>
-            </select>
-          </div>
+        <div>
+          <label class="flex items-center text-gray-700 mb-1 font-medium">
+            <i class="fas fa-cogs mr-2 text-orange-500"></i> Gearbox
+          </label>
+          <select
+            v-model="carData.gearbox"
+            required
+            class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-300"
+          >
+            <option value="" disabled selected>Select gearbox</option>
+            <option value="Automatic">Automatic</option>
+            <option value="Manual">Manual</option>
+            <option value="Semi-automatic">Semi-automatic</option>
+          </select>
         </div>
 
         <div>
@@ -185,18 +198,6 @@
             <option value="Rear-wheel drive">Rear-wheel drive</option>
             <option value="All-wheel drive">All-wheel drive</option>
           </select>
-        </div>
-
-        <div>
-          <label class="flex items-center text-gray-700 mb-1 font-medium">
-            <i class="fas fa-image mr-2 text-orange-500"></i> Image URL
-          </label>
-          <input
-            v-model="carData.image"
-            type="url"
-            required
-            class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-300"
-          />
         </div>
 
         <div>
@@ -223,25 +224,39 @@
             class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-300"
           />
         </div>
+
+        <div>
+          <label class="flex items-center text-gray-700 mb-1 font-medium">
+            <i class="fas fa-city mr-2 text-orange-500"></i> Description
+          </label>
+          <input
+            v-model="carData.description"
+            type="text"
+            required
+            class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-300"
+          />
+        </div>
       </div>
 
-      <!-- Uğur mesajı (yalnız success olduqda görünəcək) -->
+      <!-- Uğur mesajı -->
       <div
         v-if="success"
-        class="mb-4 p-4 bg-green-100 text-green-700 rounded-lg mt-4 flex items-center"
+        class="md:col-span-2 mb-4 p-4 bg-green-100 text-green-700 rounded-lg flex items-center"
       >
-        <i class="fas fa-check-circle mr-2 content-center"></i>
+        <i class="fas fa-check-circle mr-2"></i>
         Car added successfully!
       </div>
 
-      <button
-        type="submit"
-        class="w-full mt-6 py-3 px-6 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white font-bold rounded-lg shadow-lg transition-all duration-300 transform hover:scale-[1.02] flex items-center justify-center"
-        :disabled="isLoading"
-      >
-        <i class="fas fa-plus-circle mr-2"></i>
-        {{ isLoading ? "Adding..." : "Add Car" }}
-      </button>
+      <div class="md:col-span-2">
+        <button
+          type="submit"
+          class="w-full mt-6 py-3 px-6 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white font-bold rounded-lg shadow-lg transition-all duration-300 transform hover:scale-[1.02] flex items-center justify-center"
+          :disabled="isLoading"
+        >
+          <i class="fas fa-plus-circle mr-2"></i>
+          {{ isLoading ? "Adding..." : "Add Car" }}
+        </button>
+      </div>
     </form>
   </div>
 </template>
@@ -270,6 +285,7 @@ export default {
         price: "",
         owner: "",
         city: "",
+        description: "",
       },
       ownerInfo: {
         name: "",
@@ -340,7 +356,6 @@ export default {
           toast.success("Car added successfully!");
           this.success = true;
           this.clearForm();
-          // Burada birbaşa yönləndir
         }
       } catch (error) {
         console.error(
@@ -372,6 +387,7 @@ export default {
         image: "",
         price: "",
         city: "",
+        description: "",
       };
     },
   },

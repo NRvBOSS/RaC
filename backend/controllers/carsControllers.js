@@ -34,7 +34,7 @@ const getUserCars = async (req, res) => {
         return res.status(401).json({ error: "Authentication required" });
     }
 
-    const { name, year, mileage, ban, color, image, people, engine, gearbox, gear, price, city } = req.body;
+    const { name, year, mileage, ban, color, image, people, engine, gearbox, gear, price, city, description } = req.body;
 
     const owner = req.user._id;
 
@@ -52,7 +52,8 @@ const getUserCars = async (req, res) => {
         !gear || 
         !price && price !== 0 || 
         !city || 
-        !owner
+        !owner ||
+        !description
       ) {
           return res.status(400).json({ error: "Please fill all fields" });
       }
