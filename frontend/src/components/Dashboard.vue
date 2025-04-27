@@ -112,11 +112,6 @@ onMounted(() => {
         <h1 class="text-3xl font-extrabold text-gray-900"></h1>
         <p class="text-lg text-gray-600 mt-1">Your listed vehicles:</p>
       </div>
-      <img
-        src="https://wallpapers.com/images/hd/gray-and-black-anime-pfp-killua-30hvlcjz4kexc4gw.jpg"
-        alt="Profile"
-        class="w-16 h-16 rounded-full border-4 border-amber-500 shadow-lg"
-      />
     </div>
 
     <div class="border-t border-gray-300 my-6 mx-10"></div>
@@ -169,7 +164,7 @@ onMounted(() => {
         <p class="text-gray-600">You haven't added any vehicles yet.</p>
         <router-link
           to="/add-car"
-          class="mt-4 inline-block bg-amber-600 hover:bg-amber-700 text-white font-semibold py-2 px-4 rounded-lg"
+          class="mt-4 inline-block bg-amber-600 hover:bg-amber-700 text-white font-semibold py-2 px-4 rounded-lg duration-200"
         >
           Add Your First Vehicle
         </router-link>

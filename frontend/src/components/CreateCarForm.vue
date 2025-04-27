@@ -228,10 +228,10 @@
       <!-- Uğur mesajı (yalnız success olduqda görünəcək) -->
       <div
         v-if="success"
-        class="mb-4 p-4 bg-green-100 text-green-700 rounded-lg"
+        class="mb-4 p-4 bg-green-100 text-green-700 rounded-lg mt-4 flex items-center"
       >
-        <i class="fas fa-check-circle mr-2"></i>
-        Maşın uğurla əlavə edildi! Sizi avtomobillər səhifəsinə yönləndiririk...
+        <i class="fas fa-check-circle mr-2 content-center"></i>
+        Car added successfully!
       </div>
 
       <button
@@ -270,7 +270,6 @@ export default {
         price: "",
         owner: "",
         city: "",
-        router: null,
       },
       ownerInfo: {
         name: "",
@@ -316,6 +315,12 @@ export default {
       this.isLoading = true;
       try {
         const token = localStorage.getItem("token");
+        const userId = localStorage.getItem("userId");
+
+        if (!userId) {
+          throw new Error("User ID not found");
+        }
+
         const response = await axios.post(
           "http://localhost:4000/api/cars/",
           {
@@ -334,11 +339,6 @@ export default {
         if (response.status === 201) {
           toast.success("Car added successfully!");
           this.success = true;
-          setTimeout(() => {
-            this.router.push("/cars/account").catch((err) => {
-              console.error("Navigation error:", err);
-            });
-          }, 2000);
           this.clearForm();
           // Burada birbaşa yönləndir
         }

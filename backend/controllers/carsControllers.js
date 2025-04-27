@@ -1,4 +1,5 @@
 const Car = require('../models/carsModels');
+const User = require('../models/userModel')
 
 // GET all cars
 const getAllCars = async (req, res) => {
@@ -63,8 +64,14 @@ const getUserCars = async (req, res) => {
     if (!user) {
       return res.status(404).json({ error: "User not found" });
     }
+
+
+        // Burada user-dən ownerName və ownerPhone alırsan:
+        const ownerName = user.ownerName || "Unknown";
+        const ownerPhone = user.ownerPhone || "Unknown";
+
         // Yeni avtomobili yaradın
-        const car = await Car.create({ ...req.body, owner, ownerName: user.ownerName, ownerPhone: user.ownerPhone  });
+        const car = await Car.create({ ...req.body, owner: req.user._id , ownerName, ownerPhone  });
         res.status(201).json(car); // Yaradılan avtomobilin məlumatlarını qaytarın
     } catch (error) {
         res.status(500).json({ error: error.message }); // Server xətası ilə cavab verin
