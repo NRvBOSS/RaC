@@ -17,22 +17,60 @@ const getCar = async (req, res) => {
     res.status(200).json(car);
 }
 
-// POST a new cars
-const createCar = async (req, res) => {
-    const { name, year, sale, rent ,people, engine, gearbox, gear, price, owner, city } = req.body
+// GET a single car by userId
+const getUserCars = async (req, res) => {
+    try {
+      const cars = await Car.find({ owner: req.params.userId });
+      res.status(200).json(cars);
+    } catch (error) {
+      res.status(500).json({ error: 'Failed to fetch user cars' });
+    }
+  };
 
-    if ( !name, !year, !sale, !rent, !people, !engine, !gearbox, !gear, !price, !owner, !city ){
-        return res.status(400).json({ error: "Please fill all fields"})
+  const createCar = async (req, res) => {
+    // Əvvəlcə req.user-ın mövcud olduğunu yoxlayın
+    if (!req.user || !req.user._id) {
+        return res.status(401).json({ error: "Authentication required" });
     }
 
-    try{
-        const car = await Car.create({ ...req.body})
-        res.status(200).json(car)
+    const { name, year, mileage, ban, color, image, people, engine, gearbox, gear, price, city } = req.body;
+
+    const owner = req.user._id;
+
+    // Dəyişənlərin hamısının mövcud olduğunu yoxlayın
+    if (
+        !name || 
+        !year || 
+        !ban || 
+        !color || 
+        !mileage && mileage !== 0 ||
+        !image || 
+        !people && people !== 0 || 
+        !engine || 
+        !gearbox || 
+        !gear || 
+        !price && price !== 0 || 
+        !city || 
+        !owner
+      ) {
+          return res.status(400).json({ error: "Please fill all fields" });
+      }
+      
+
+    try {
+
+        const user = await User.findById(req.user._id);
+    if (!user) {
+      return res.status(404).json({ error: "User not found" });
     }
-    catch (error){
-        res.status(400).json({ error: error.message})
+        // Yeni avtomobili yaradın
+        const car = await Car.create({ ...req.body, owner, ownerName: user.ownerName, ownerPhone: user.ownerPhone  });
+        res.status(201).json(car); // Yaradılan avtomobilin məlumatlarını qaytarın
+    } catch (error) {
+        res.status(500).json({ error: error.message }); // Server xətası ilə cavab verin
     }
-}
+};
+
 
 // DELETE a car
 const deleteCar = async (req, res) => {
@@ -71,5 +109,6 @@ module.exports ={
     createCar,
     updateCar,
     deleteCar,
-    delAllCars
+    delAllCars,
+    getUserCars 
 }

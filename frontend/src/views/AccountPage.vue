@@ -40,7 +40,7 @@ const currentViewComponent = computed(() => {
     >
       <div>
         <router-link
-          to="/"
+          to="/cars"
           class="text-3xl font-bold mb-10 block text-center text-amber-500 hover:text-amber-400 transition-colors"
         >
           RENT<span class="text-white">A</span>CAR

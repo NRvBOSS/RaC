@@ -13,6 +13,7 @@ const carsSchema = new Schema({
     ban:{
         type: String,
         required: true,
+        enum:['Sedan', 'Hatchback', 'SUV', 'Coupe', 'Convertible']
     },
     color:{
         type: String,
@@ -41,12 +42,12 @@ const carsSchema = new Schema({
     gearbox:{
         type: String,
         required: true,
-        enum: ['Automatic', 'Manual']
+        enum: ['Automatic', 'Manual', 'Semi-Automatic']
     },
     gear:{
         type: String,
         required: true,
-        enum: ['Hybrid', 'Petrol', 'Diesel', 'Electric']
+       enum: ['Front-wheel drive', 'Rear-wheel drive', 'All-wheel drive']
     },
     price:{
         type: Number,
@@ -57,8 +58,14 @@ const carsSchema = new Schema({
       required:true
     },
     owner:{
-        type: String,
+        type: mongoose.Schema.Types.ObjectId,
         required: true
+    },
+    ownerName: {
+        type: String, required: true
+    },
+    ownerPhone: {
+        type: String, required: true
     },
     city:{
         type: String,

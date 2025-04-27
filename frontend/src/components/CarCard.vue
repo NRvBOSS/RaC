@@ -4,7 +4,7 @@
     <div class="mb-8 flex justify-between items-center">
       <h2 class="text-3xl font-bold text-gray-900">
         <span></span>
-        <span>Premium Fleet</span>
+        <span>Our Cars</span>
       </h2>
       <p class="text-gray-600 font-medium">{{ filteredCars.length }} vehicles available</p>
     </div>
@@ -28,15 +28,15 @@
       <div
         v-for="car in filteredCars"
         :key="car.id"
-        class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-2xl transition-shadow duration-300 flex flex-col h-full border border-gray-200"
+        class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-2xl transition-shadow duration-300 flex flex-col h-full border border-gray-200 relative"
       >
-        <!-- Badge -->
+        <!-- Badge - Fixed position -->
         <div class="absolute top-3 left-3 z-10">
           <span 
             class="px-3 py-1 rounded-full text-sm font-semibold"
-            :class="car.sale || car.rent ? 'bg-green-100 text-green-800' : 'bg-blue-100 text-blue-800'"
+            :class="car.sale ? 'bg-green-100 text-green-800' : 'bg-blue-100 text-blue-800'"
           >
-            {{ car.sale || car.rent ? 'FOR SALE' : 'FOR RENT' }}
+            {{ car.sale ? 'FOR SALE' : 'FOR RENT' }}
           </span>
         </div>
 

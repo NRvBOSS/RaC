@@ -47,7 +47,7 @@ export default {
     <!-- Logo -->
     <router-link
       class="ml-6 text-3xl text-white font-bold hover:scale-105 transition-transform duration-300"
-      to="/"
+      to="/cars"
     >
       <p class="text-white flex items-center">
         <span class="text-amber-500">RENT</span>
