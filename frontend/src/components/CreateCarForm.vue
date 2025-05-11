@@ -114,6 +114,19 @@
             class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-300"
           />
         </div>
+
+        <!-- Description -->
+        <div>
+          <label class="flex items-center text-gray-700 mb-1 font-medium">
+            <i class="fas fa-city mr-2 text-orange-500"></i> Description
+          </label>
+          <input
+            v-model="carData.description"
+            type="text"
+            required
+            class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-300"
+          />
+        </div>
       </div>
 
       <!-- Right Column -->
@@ -219,18 +232,6 @@
           </label>
           <input
             v-model="carData.city"
-            type="text"
-            required
-            class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-300"
-          />
-        </div>
-
-        <div>
-          <label class="flex items-center text-gray-700 mb-1 font-medium">
-            <i class="fas fa-city mr-2 text-orange-500"></i> Description
-          </label>
-          <input
-            v-model="carData.description"
             type="text"
             required
             class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-300"
