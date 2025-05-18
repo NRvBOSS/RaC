@@ -1,6 +1,4 @@
 <template>
-  <LoadingSpinner v-if="!car" />
-
   <div v-if="car" class="pb-20 bg-gray-50 min-h-screen">
     <!-- Header info -->
     <div
@@ -255,7 +253,6 @@
 import { ref, onMounted, computed } from "vue";
 import { useRoute } from "vue-router";
 import axios from "axios";
-import LoadingSpinner from "./LoadingSpinner.vue";
 import {
   CalendarIcon,
   CogIcon,
