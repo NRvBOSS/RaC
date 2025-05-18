@@ -144,6 +144,5 @@ const tweets = ref([
     time: "7:45PM",
     date: "07.03.2025",
   },
-  // ... other tweets remain the same
 ]);
 </script>

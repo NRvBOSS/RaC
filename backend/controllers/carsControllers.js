@@ -29,7 +29,7 @@ const getUserCars = async (req, res) => {
   };
 
   const createCar = async (req, res) => {
-    // Əvvəlcə req.user-ın mövcud olduğunu yoxlayın
+    // Before check have req.user?
     if (!req.user || !req.user._id) {
         return res.status(401).json({ error: "Authentication required" });
     }
@@ -38,7 +38,7 @@ const getUserCars = async (req, res) => {
 
     const owner = req.user._id;
 
-    // Dəyişənlərin hamısının mövcud olduğunu yoxlayın
+    // Check all variables
     if (
         !name || 
         !year || 
@@ -67,15 +67,15 @@ const getUserCars = async (req, res) => {
     }
 
 
-        // Burada user-dən ownerName və ownerPhone alırsan:
+        // Get owner name and phone
         const ownerName = user.ownerName || "Unknown";
         const ownerPhone = user.ownerPhone || "Unknown";
 
-        // Yeni avtomobili yaradın
+        // Create new car
         const car = await Car.create({ ...req.body, owner: req.user._id , ownerName, ownerPhone  });
-        res.status(201).json(car); // Yaradılan avtomobilin məlumatlarını qaytarın
+        res.status(201).json(car); // Return car which created
     } catch (error) {
-        res.status(500).json({ error: error.message }); // Server xətası ilə cavab verin
+        res.status(500).json({ error: error.message }); // Error
     }
 };
 

@@ -5,7 +5,7 @@ const {
     updateCar,
     deleteCar,
     delAllCars,
-    getUserCars // Yeni əlavə etdiyimiz funksiya
+    getUserCars,
 } = require('../controllers/carsControllers')
 const router = require('express').Router();
 const authMiddleware = require('../middlewares/authMiddleware');
@@ -15,7 +15,7 @@ const authMiddleware = require('../middlewares/authMiddleware');
 router.get('/', getAllCars)
 
 // GET user's cars
-router.get('/user/:userId', getUserCars) // Yeni route
+router.get('/user/:userId', getUserCars)
 
 // GET a single car
 router.get('/:id', getCar)
