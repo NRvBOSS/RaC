@@ -19,6 +19,12 @@
 
 ## 📁 Project Structure
 
+RaC/
+├── backend/ # Express.js API and MongoDB configuration
+       ├──docker/ # Docker - related files
+├── frontend/ # Vue.js UI application
+└── README.md # Project documentation
+
 
 ## 🚀 Getting Started (Local Setup)
 
