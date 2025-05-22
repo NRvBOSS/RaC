@@ -55,7 +55,7 @@ const deleteCar = async (carId) => {
     if (result.isConfirmed) {
       const token = localStorage.getItem("token");
 
-      // Optimistic update - UI-ni dərhal yeniləyirik
+      // Optimistic update
       const carToDelete = cars.value.find((car) => car._id === carId);
       cars.value = cars.value.filter((car) => car._id !== carId);
 
@@ -75,7 +75,7 @@ const deleteCar = async (carId) => {
   } catch (err) {
     console.error("Delete error:", err);
 
-    // Əgər xəta baş veribsə, əvvəlki vəziyyətə qaytarırıq
+    // If have an error, back before position
     if (carToDelete) {
       cars.value.push(carToDelete);
       cars.value.sort((a, b) => new Date(a.createdAt) - new Date(b.createdAt));
@@ -375,7 +375,6 @@ onMounted(() => {
 </template>
 
 <style scoped>
-/* Əgər scoped CSS istifadə edirsinizsə */
 .delete-btn {
   transition: all 0.3s ease;
 }

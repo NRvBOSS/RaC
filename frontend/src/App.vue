@@ -1,6 +1,5 @@
 <template>
   <RouterView />
-  <AppFooter />
 </template>
 
 <script>

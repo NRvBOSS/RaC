@@ -131,7 +131,7 @@
                 @click="callOwner(owner.phone)"
                 class="w-full bg-gradient-to-r from-amber-600 to-amber-700 hover:from-amber-700 hover:to-amber-800 text-white text-lg font-bold py-3 px-6 rounded-lg shadow hover:shadow-md transition-all duration-300 flex items-center justify-center overflow-hidden"
               >
-                <!-- İlk görünüş - Sadəcə Call iconu -->
+                <!-- First seen. Call icon -->
                 <div class="transition-all duration-300 group-hover:opacity-0">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -149,7 +149,7 @@
                   </svg>
                 </div>
 
-                <!-- Hover zamanı görünəcək məlumatlar -->
+                <!-- Infos when hover -->
                 <div
                   class="absolute inset-0 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300"
                 >
@@ -158,7 +158,7 @@
                 </div>
               </button>
 
-              <!-- Baloncuk effekti -->
+              <!-- Balloon effect -->
               <div
                 class="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-8 border-r-8 border-b-8 border-l-transparent border-r-transparent border-b-amber-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
               ></div>
@@ -247,6 +247,7 @@
       </router-link>
     </div>
   </div>
+  <AppFooter />
 </template>
 
 <script setup>
@@ -263,6 +264,7 @@ import {
   IdentificationIcon,
   LocationMarkerIcon,
 } from "@heroicons/vue/outline";
+import AppFooter from "@/views/AppFooter.vue";
 
 const car = ref();
 const route = useRoute();

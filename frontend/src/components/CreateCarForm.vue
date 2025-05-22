@@ -11,7 +11,7 @@
           <i class="fas fa-car text-orange-500 text-2xl"></i>
         </div>
 
-        <!-- Sahib məlumatları bölməsi -->
+        <!-- Owner info section -->
         <div
           class="mb-6 p-4 bg-orange-50 rounded-lg border-l-4 border-orange-500"
         >
@@ -239,7 +239,7 @@
         </div>
       </div>
 
-      <!-- Uğur mesajı -->
+      <!-- Success message -->
       <div
         v-if="success"
         class="md:col-span-2 mb-4 p-4 bg-green-100 text-green-700 rounded-lg flex items-center"
