@@ -12,6 +12,7 @@
     "@heroicons/vue": "^1.0.6",
     "@tailwindcss/vite": "^4.0.15",
     "axios": "^1.9.0",
+    "mo-js": "^0.288.2",
     "pinia": "^3.0.1",
     "sweetalert2": "^11.19.1",
     "swiper": "^11.2.6",
