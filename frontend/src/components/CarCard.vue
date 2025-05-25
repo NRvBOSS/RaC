@@ -80,6 +80,34 @@
           ></div>
         </div>
 
+        <!-- Add this right after the badge div -->
+        <div class="absolute top-3 right-3 z-10">
+          <button
+            @click="toggleLike(car._id)"
+            class="p-2 rounded-full bg-white/80 hover:bg-white transition-colors duration-200"
+            aria-label="Like this car"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-6 w-6"
+              :class="
+                car.isLiked
+                  ? 'text-red-500 fill-red-500'
+                  : 'text-gray-400 fill-transparent'
+              "
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
+              />
+            </svg>
+          </button>
+        </div>
+
         <!-- Car Info -->
         <div class="p-5 flex-grow">
           <div class="mb-4">
