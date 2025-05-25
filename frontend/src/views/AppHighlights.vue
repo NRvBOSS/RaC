@@ -189,55 +189,24 @@
 </template>
 
 <script setup>
-import { ref } from "vue";
+import axios from "axios";
+import { ref, onMounted, computed } from "vue";
+import { useRoute } from "vue-router";
 
-const highlightedItems = ref([
-  {
-    id: 1,
-    image:
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/2019_Toyota_RAV4_LE_2.5L_front_4.14.19.jpg/640px-2019_Toyota_RAV4_LE_2.5L_front_4.14.19.jpg",
-    name: "Toyota RAV4",
-    people: 4,
-    engine: "2.5L 4-cylinder",
-    gearbox: "Automatic",
-    gear: "Hybrid",
-    price: 500,
-    sale: false,
-  },
-  {
-    id: 2,
-    image:
-      "https://eu-images.contentstack.com/v3/assets/blt0bbd1b20253587c0/blta5f44858165dd4d2/66e0c1aea7bc54030f238993/2024_AudiRS7_performance_Nardo_grey.jpg",
-    name: "Audi RS7",
-    people: 4,
-    engine: "4.0L 4-cylinder",
-    gearbox: "Automatic",
-    gear: "Oil",
-    price: 75480,
-    sale: true,
-  },
-  {
-    id: 3,
-    image: "https://i.ytimg.com/vi/gldCFSrad3Y/hq720.jpg",
-    name: "Lincoln MKZ",
-    people: 4,
-    engine: "2.0L 4-cylinder",
-    gearbox: "Variator",
-    gear: "Hybrid",
-    price: 34500,
-    sale: true,
-  },
-  {
-    id: 4,
-    image: 'https://www.auto-data.net/images/f0/Opel-Astra-G-Caravan.jpg',
-    name: 'Opel Astra',
-    year: '1998',
-    people: 4,
-    engine: '1.8L Caravan',
-    gearbox: 'Automatic',
-    gear: 'Oil',
-    price: 50,
-    sale: false
+const highlightedItems = ref([]);
+const route = useRoute();
+
+function getRandomCars(cars, count = 4) {
+  const shuffled = cars.slice().sort(() => 0.5 - Math.random());
+  return shuffled.slice(0, count);
+}
+
+onMounted(async () => {
+  try {
+    const response = await axios.get("http://localhost:4000/api/cars");
+    highlightedItems.value = getRandomCars(response.data, 4);
+  } catch (error) {
+    console.error("Error fetching cars:", error);
   }
-]);
+});
 </script>
